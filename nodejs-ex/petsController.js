@@ -4,4 +4,8 @@ function generateRandomPet(petsArray) {
     return petsArray[Math.floor(Math.random() * petsArray.length)];
 }
 
-export { generateRandomPet, pets  };
+function getPetsCount(petsArray) {
+    return petsArray.length;
+}
+
+export { generateRandomPet, getPetsCount, pets  };
