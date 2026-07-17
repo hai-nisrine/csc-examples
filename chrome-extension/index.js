@@ -1,9 +1,22 @@
 
 const saveButton = document.querySelector("#input-btn")
 
-let myLeads = []
+let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 const inputEl = document.querySelector("#input-el")
+const ulEl = document.querySelector("#ul-el")
 
 saveButton.addEventListener("click", function() {
-    console.log("Button clicked")
+    myLeads.push(inputEl.value)
 })
+
+
+let listItems = ""
+
+for (let i =0; i<myLeads.length; i++) {
+    
+    listItems += "<li>" +  myLeads[i] + "</li>""
+   
+    
+}
+
+ulEl.innerHTML = listItems 
