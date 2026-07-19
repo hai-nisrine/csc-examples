@@ -4,9 +4,10 @@ const saveButton = document.querySelector("#input-btn")
 let myLeads = []
 const inputEl = document.querySelector("#input-el")
 const ulEl = document.querySelector("#ul-el")
+const deleteBtn = document.querySelector("#delete-btn")
 
 
-let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     renderLeads()
@@ -16,6 +17,12 @@ saveButton.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads)) 
+    renderLeads()
+})
+
+deleteBtn.addEventListener("dblclick", function () {
+    localStorage.clear()
+    myLeads.length = 0
     renderLeads()
 })
 
