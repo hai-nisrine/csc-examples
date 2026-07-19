@@ -10,10 +10,6 @@ const tabBtn = document.querySelector("#tab-btn")
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
-const tabs = [
-    {url: "www.aui.ma"}
-]
-
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -36,9 +32,13 @@ deleteBtn.addEventListener("dblclick", function () {
 })
 
 tabBtn.addEventListener("click", function() {
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads)) 
-    render(myLeads)
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads)) 
+        render(myLeads)
+    })
+
+    
 })
 
 

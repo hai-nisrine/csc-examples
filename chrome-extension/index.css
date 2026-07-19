@@ -18,15 +18,16 @@ button {
     background-color: #2196f3;
     border: 1px solid #2196f3;
     font-weight: bold;
-    font-size: 1.4rem;
-    padding: 10px 20px;
+    font-size: 0.9rem;
+    padding: 8px 14px;
     border-radius: 5px;
+    margin: 4px 4px 4px 0;
 }
 
 #delete-btn {
     color: #2196f3;
     background-color: white;
-    
+
 
 }
 
