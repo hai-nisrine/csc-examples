@@ -1,7 +1,6 @@
 
 
 let inputEl = document.querySelector("#input-el")
-let convertBtn = document.querySelector("#convert-btn")
 let feetResult = document.querySelector("#feet-results")
 let metersResult = document.querySelector("#meters-results")
 let gallonsResult = document.querySelector("#gallons-results")
@@ -10,7 +9,7 @@ let poundsResult = document.querySelector("#pounds-results")
 let kilosResult = document.querySelector("#kilos-results")
 
 
-convertBtn.addEventListener("click", function() {
+inputEl.addEventListener("input", function() {
     let inputNumber = Number(inputEl.value)
 
     feetResult.innerHTML = `<p>
@@ -21,20 +20,20 @@ convertBtn.addEventListener("click", function() {
     ${feetToMeter(inputNumber).toFixed(3)}
     </p>`
 
-    metersResult.innerHTML = `<p>
-    ${feetToMeter(inputNumber).toFixed(3)}
+    gallonsResult.innerHTML = `<p>
+    ${litersToGallons(inputNumber).toFixed(3)}
     </p>`
 
-    metersResult.innerHTML = `<p>
-    ${feetToMeter(inputNumber).toFixed(3)}
+    litersResult.innerHTML = `<p>
+    ${gallonsToLiters(inputNumber).toFixed(3)}
     </p>`
 
-    metersResult.innerHTML = `<p>
-    ${feetToMeter(inputNumber).toFixed(3)}
+    poundsResult.innerHTML = `<p>
+    ${kilosToPounds(inputNumber).toFixed(3)}
     </p>`
 
-    metersResult.innerHTML = `<p>
-    ${feetToMeter(inputNumber).toFixed(3)}
+    kilosResult.innerHTML = `<p>
+    ${poundsToKilos(inputNumber).toFixed(3)}
     </p>`
 })
 
@@ -61,6 +60,6 @@ function kilosToPounds(num) {
 }
 
 
-function poundsTokilos(num) {
+function poundsToKilos(num) {
     return num * 0.453592
 }
