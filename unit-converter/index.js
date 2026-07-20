@@ -2,22 +2,40 @@
 
 let inputEl = document.querySelector("#input-el")
 let convertBtn = document.querySelector("#convert-btn")
-let feetResult = document.querySelector("#feet-result")
-let metersResult = document.querySelector("#meters-result")
-let gallonsResult = document.querySelector("#gallons-result")
-let litersResult = document.querySelector("#liters-result")
-let poundsResult = document.querySelector("#pounds-result")
-let kilosResult = document.querySelector("#kilos-result")
+let feetResult = document.querySelector("#feet-results")
+let metersResult = document.querySelector("#meters-results")
+let gallonsResult = document.querySelector("#gallons-results")
+let litersResult = document.querySelector("#liters-results")
+let poundsResult = document.querySelector("#pounds-results")
+let kilosResult = document.querySelector("#kilos-results")
 
 
 convertBtn.addEventListener("click", function() {
     let inputNumber = Number(inputEl.value)
 
-    
     feetResult.innerHTML = `<p>
-        
+        ${meterToFeet(inputNumber).toFixed(3)}
     </p>`
 
+    metersResult.innerHTML = `<p>
+    ${feetToMeter(inputNumber).toFixed(3)}
+    </p>`
+
+    metersResult.innerHTML = `<p>
+    ${feetToMeter(inputNumber).toFixed(3)}
+    </p>`
+
+    metersResult.innerHTML = `<p>
+    ${feetToMeter(inputNumber).toFixed(3)}
+    </p>`
+
+    metersResult.innerHTML = `<p>
+    ${feetToMeter(inputNumber).toFixed(3)}
+    </p>`
+
+    metersResult.innerHTML = `<p>
+    ${feetToMeter(inputNumber).toFixed(3)}
+    </p>`
 })
 
 
