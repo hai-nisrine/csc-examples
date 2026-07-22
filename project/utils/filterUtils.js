@@ -10,9 +10,15 @@ export function filterByCity(arr, userCity) {
     })
 }
 
+export function filterByUsername(arr, username) {
+    return arr.find((a) => {
+        return a.username.toLowerCase() === username.toLowerCase()
+    })
+}
+
 export function sendJSONResponse(res, statusCode, payload) {
     res.setHeader("Content-Type", "application/json")
-    res.statusCode = 200
+    res.statusCode = statusCode
     res.end(JSON.stringify(payload))
 }
 
