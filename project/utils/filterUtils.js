@@ -22,3 +22,16 @@ export function sendJSONResponse(res, statusCode, payload) {
     res.end(JSON.stringify(payload))
 }
 
+export function getDataFromQueryParam(arr, queryObj) {
+    const {id, city, username} = queryObj
+
+    if (id) {
+        return filterById(arr, Number(id))
+    } else if (city) {
+        return filterByCity(arr, city)
+    } else if (username) {
+        return filterByUsername(arr, username)
+    }
+    return arr
+    
+}
